@@ -7,9 +7,7 @@
 
 ### [English README](README-en.md) | [更新日志](update_logs.md) | [疑难解答](troubleshooting.md) | [Kotlin 版](https://github.com/MrShieh-X/cmcl-kotlin)
 
-## 🎬 视频教程
-[\[CMCL2.0\]命令行版MC启动器, 支持正版登录|外置登录|统一通行证|模组/整合包搜索安装|自定义皮肤披风](https://www.bilibili.com/video/BV1bY411R7wa/) <br/>
-如果你观看完视频后或使用时仍然有任何问题，可以参考[疑难解答](troubleshooting.md)或通过在[关于作者](#-关于作者)中找到的作者联系信息向作者提出疑问。
+> **注意**: 本仓库为 fork 版本，部分修改由 AI 辅助完成。
 
 ## 🏆 特别鸣谢
 - [@0xpte4r6](https://github.com/0xpte4r6)：开发部分功能

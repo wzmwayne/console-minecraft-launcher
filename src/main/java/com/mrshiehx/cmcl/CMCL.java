@@ -186,7 +186,7 @@ public class CMCL {
         } else {
             initDefaultDirs();
             configJSONObject = new JSONObject();
-            configJSONObject.put("language", Locale.getDefault().getLanguage());
+            configJSONObject.put("language", "zh");
             configJSONObject.put("javaPath", javaPath = JavaUtils.getDefaultJavaPath());
             configJSONObject.put("maxMemory", SystemUtils.getDefaultMemory());
             configJSONObject.put("windowSizeWidth", 854);
@@ -254,12 +254,7 @@ public class CMCL {
 
     public static LanguageEnum getLanguage() {
         if (languageEnum == null) {
-            String languageString = Utils.getConfig().optString("language");
-            if (isEmpty(languageString)) {
-                Utils.saveConfig(Utils.getConfig().put("language", (languageEnum = LanguageEnum.overriddenValueOf(Locale.getDefault().getLanguage())).codes.stream().findAny().orElse("en")));
-            } else {
-                languageEnum = LanguageEnum.overriddenValueOf(languageString);
-            }
+            languageEnum = LanguageEnum.SIMPLIFIED_CHINESE;
         }
         return languageEnum;
     }

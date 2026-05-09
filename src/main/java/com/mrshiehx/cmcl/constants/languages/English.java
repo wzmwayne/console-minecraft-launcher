@@ -302,6 +302,7 @@ public class English implements Language {
         en.put("INSTALL_MODLOADER_FAILED_TO_GET_TARGET_JSON", "Unable to install %1$s: Failed to get target %1$s JSON.");
         en.put("INSTALL_MODLOADER_SELECT", "Please enter the version of %1$s you want to install (default is %2$s): ");
         en.put("INSTALL_MODLOADER_SELECT_NOT_FOUND", "Version \"%1$s\" not found, please enter the version of %2$s you want to install (default is %3$s): ");
+        en.put("INSTALL_MODLOADER_SELECT_LATEST", "Automatically selected the latest %1$s version: %2$s");
         en.put("INSTALL_MODLOADER_UNABLE_DO_YOU_WANT_TO_CONTINUE", "Would you like to continue installing the original version (without %s)?");
         en.put("INSTALL_MODLOADER_FAILED_TO_PARSE_TARGET_JSON", "Unable to install %1$s: Failed to parse target %1$s JSON.");
         en.put("INSTALL_MODLOADER_ALREADY_INSTALL", "Unable to install %1$s: The target version is installed %1$s.");
@@ -478,11 +479,13 @@ public class English implements Language {
                         "  Options:\n" +
                         "   -n, --name=<version storage name>    Indicates the name of the version store locally.\n" +
                         "                                           cmcl install 1.18.2 -n my1.18.2\n" +
-                        "   -s, --select                         Select this version after installing.\n" +
-                        "                                           cmcl install 1.18.2 -s\n" +
-                        "   --fabric[=<Fabric version>]          Install Fabric, you can choose whether to install Fabric API and specify\n" +
-                        "      [--api[=<Fabric API version>]]    its version. Not compatible with Forge, LiteLoader, OptiFine, Quilt.\n" +
-                        "                                           cmcl install 1.19 --fabric=0.14.12 --api\n" +
+                         "   -s, --select                         Select this version after installing.\n" +
+                         "                                           cmcl install 1.18.2 -s\n" +
+                         "   --fabric[=<Fabric version>]          Install Fabric, you can choose whether to install Fabric API and specify\n" +
+                         "      [--api[=<Fabric API version>]]    its version. Use latest or auto to auto-select the latest version.\n" +
+                         "                                           Not compatible with Forge, LiteLoader, OptiFine, Quilt.\n" +
+                         "                                           cmcl install 1.19 --fabric=latest --api=latest\n" +
+                         "                                           cmcl install 1.19 --fabric=0.14.12 --api\n" +
                         "   --forge[=<Forge version>]            Install Forge\n" +
                         "                                           cmcl install 1.19 --forge\n" +
                         "   --liteloader[=<LiteLoader version>]  Install LiteLoader\n" +
@@ -520,9 +523,11 @@ public class English implements Language {
                         "   --config=<config name> [<content>]    Set the configuration separately for the version, use \"config --view\" to\n" +
                         "                                         view the content with \"[Game related]\" is the configuration that can be set.\n" +
                         "                                         If no <content> is entered, the global configuration will be used.\n" +
-                        "   --fabric[=<Fabric version>]           Install Fabric for the version, you can specify the version.\n" +
-                        "      [--api[=<Fabric API version>]]     Add --api to install Fabric API, you can also specify the version.\n" +
-                        "                                            cmcl version 1.19 --fabric --api=0.58.0\n" +
+   "   --fabric[=<Fabric version>]           Install Fabric for the version, you can specify the version.\n" +
+                         "      [--api[=<Fabric API version>]]     Add --api to install Fabric API, you can also specify the version.\n" +
+                         "                                            Use latest or auto to auto-select the latest version.\n" +
+                         "                                            cmcl version 1.19 --fabric=latest --api=latest\n" +
+                         "                                            cmcl version 1.19 --fabric --api=0.58.0\n" +
                         "   --forge[=<Forge version>]             Install Forge for the version, you can specify the version.\n" +
                         "                                            cmcl version 1.19 --forge=42.0.0\n" +
                         "   --liteloader[=<LiteLoader version>]   Install LiteLoader for the version, you can specify the version.\n" +

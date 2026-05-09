@@ -177,6 +177,7 @@ public class Cantonese extends SimplifiedChinese {
         cantonese.put("INSTALL_MODLOADER_NO_INSTALLABLE_VERSION", "无法安装 %1$s：冇可安装嘅 %1$s 版本，可能系因为 %1$s 唔支持呢个游戏版本。");
         cantonese.put("INSTALL_MODLOADER_SELECT", "请输入你要安装嘅 %1$s 版本(默认选择%2$s)：");
         cantonese.put("INSTALL_MODLOADER_SELECT_NOT_FOUND", "版本“%1$s”搵唔到，请输入你要安装嘅 %2$s 版本(默认选择%3$s)：");
+        cantonese.put("INSTALL_MODLOADER_SELECT_LATEST", "已自动拣最新 %1$s 版本：%2$s");
         cantonese.put("INSTALL_MODLOADER_UNABLE_DO_YOU_WANT_TO_CONTINUE", "使唔使继续安装原版（无 %s）？");
         cantonese.put("INSTALL_MODLOADER_EMPTY_MC_VERSION", "无法安装 %s：无法获得目标版本嘅游戏版本。");
         cantonese.put("INSTALL_MODLOADER_ALREADY_INSTALL_ANOTHER_ONE", "无法安装 %1$s：目标版本已安装 %2$s，%2$s 和 %1$s 唔可以共存。");

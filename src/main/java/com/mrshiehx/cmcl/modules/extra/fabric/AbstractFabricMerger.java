@@ -61,7 +61,7 @@ public abstract class AbstractFabricMerger implements ExtraMerger {
      **/
     public Pair<Boolean, List<JSONObject>> merge(String minecraftVersion, JSONObject headJSONObject, File jarFile, boolean askContinue, @Nullable String extraVersion) {
         String fabricVersion;
-        if (isEmpty(extraVersion)) {
+        if (isEmpty(extraVersion) || "latest".equals(extraVersion) || "auto".equals(extraVersion)) {
             JSONArray jsonArray;
             try {
                 jsonArray = listFabricLoaderVersions(minecraftVersion);
@@ -77,18 +77,29 @@ public abstract class AbstractFabricMerger implements ExtraMerger {
                 System.out.println(getString("INSTALL_MODLOADER_NO_INSTALLABLE_VERSION", getModLoaderName()));
                 return new Pair<>(askContinue && InteractionUtils.yesOrNo(getString("INSTALL_MODLOADER_UNABLE_DO_YOU_WANT_TO_CONTINUE", getModLoaderName())), null);
             }
-            Map<String, JSONObject> fabrics = new LinkedHashMap<>();
-            for (Object object : jsonArray) {
-                if (object instanceof JSONObject) {
-                    JSONObject jsonObject = (JSONObject) object;
-                    fabrics.put(jsonObject.optJSONObject("loader", new JSONObject()).optString("version"), jsonObject);
+            if ("latest".equals(extraVersion) || "auto".equals(extraVersion)) {
+                JSONObject first = jsonArray.optJSONObject(0);
+                if (first != null) {
+                    fabricVersion = first.optJSONObject("loader", new JSONObject()).optString("version");
+                    System.out.println(getString("INSTALL_MODLOADER_SELECT_LATEST", getModLoaderName(), fabricVersion));
+                } else {
+                    System.out.println(getString("INSTALL_MODLOADER_NO_INSTALLABLE_VERSION", getModLoaderName()));
+                    return new Pair<>(askContinue && InteractionUtils.yesOrNo(getString("INSTALL_MODLOADER_UNABLE_DO_YOU_WANT_TO_CONTINUE", getModLoaderName())), null);
                 }
+            } else {
+                Map<String, JSONObject> fabrics = new LinkedHashMap<>();
+                for (Object object : jsonArray) {
+                    if (object instanceof JSONObject) {
+                        JSONObject jsonObject = (JSONObject) object;
+                        fabrics.put(jsonObject.optJSONObject("loader", new JSONObject()).optString("version"), jsonObject);
+                    }
+                }
+                List<String> fabricVersions = new ArrayList<>(fabrics.keySet());
+                PrintingUtils.printListItems(fabricVersions, true, 4, 2, true);
+                fabricVersion = ExtraMerger.selectExtraVersion(getString("INSTALL_MODLOADER_SELECT", getModLoaderName(), fabricVersions.get(0)), fabrics, fabricVersions.get(0), getModLoaderName());
+                if (fabricVersion == null)
+                    return new Pair<>(false, null);
             }
-            List<String> fabricVersions = new ArrayList<>(fabrics.keySet());
-            PrintingUtils.printListItems(fabricVersions, true, 4, 2, true);
-            fabricVersion = ExtraMerger.selectExtraVersion(getString("INSTALL_MODLOADER_SELECT", getModLoaderName(), fabricVersions.get(0)), fabrics, fabricVersions.get(0), getModLoaderName());
-            if (fabricVersion == null)
-                return new Pair<>(false, null);
         } else {
             fabricVersion = extraVersion;
         }

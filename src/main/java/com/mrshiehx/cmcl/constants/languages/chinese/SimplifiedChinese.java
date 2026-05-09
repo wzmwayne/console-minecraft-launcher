@@ -303,6 +303,7 @@ public class SimplifiedChinese implements Language {
         zh.put("INSTALL_MODLOADER_FAILED_TO_GET_TARGET_JSON", "无法安装 %1$s：获得目标 %1$s JSON 失败。");
         zh.put("INSTALL_MODLOADER_SELECT", "请输入您要安装的 %1$s 版本(默认选择%2$s)：");
         zh.put("INSTALL_MODLOADER_SELECT_NOT_FOUND", "版本“%1$s”找不到，请输入您要安装的 %2$s 版本(默认选择%3$s)：");
+        zh.put("INSTALL_MODLOADER_SELECT_LATEST", "已自动选择最新 %1$s 版本：%2$s");
         zh.put("INSTALL_MODLOADER_UNABLE_DO_YOU_WANT_TO_CONTINUE", "请问是否继续安装原版（无 %s）？");
         zh.put("INSTALL_MODLOADER_FAILED_TO_PARSE_TARGET_JSON", "无法安装 %1$s：解析目标 %1$s JSON 失败。");
         zh.put("INSTALL_MODLOADER_ALREADY_INSTALL", "无法安装 %1$s：目标版本已安装 %1$s。");
@@ -475,11 +476,13 @@ public class SimplifiedChinese implements Language {
                         "  选项：\n" +
                         "   -n, --name=<存储的版本名称>               指明版本存储在本地的名称。\n" +
                         "                                                cmcl install 1.18.2 -n my1.18.2\n" +
-                        "   -s, --select                              安装完选择该版本\n" +
-                        "                                                cmcl install 1.18.2 -s\n" +
-                        "   --fabric[=<Fabric 版本>]                  安装 Fabric，可选择是否安装 Fabric API 并指定版本。\n" +
-                        "      [--api[=<Fabric API 版本>]]            与 Forge、LiteLoader、OptiFine、Quilt 不兼容。\n" +
-                        "                                                cmcl install 1.19 --fabric=0.14.12 --api\n" +
+                         "   -s, --select                              安装完选择该版本\n" +
+                         "                                                cmcl install 1.18.2 -s\n" +
+                         "   --fabric[=<Fabric 版本>]                  安装 Fabric，可选择是否安装 Fabric API 并指定版本。\n" +
+                         "      [--api[=<Fabric API 版本>]]            版本可用 latest 或 auto 自动选择最新版。\n" +
+                         "                                             与 Forge、LiteLoader、OptiFine、Quilt 不兼容。\n" +
+                         "                                                cmcl install 1.19 --fabric=latest --api=latest\n" +
+                         "                                                cmcl install 1.19 --fabric=0.14.12 --api\n" +
                         "   --forge[=<Forge 版本>]                    安装 Forge\n" +
                         "                                                cmcl install 1.19 --forge\n" +
                         "   --liteloader[=<LiteLoader 版本>]          安装 LiteLoader\n" +
@@ -514,8 +517,10 @@ public class SimplifiedChinese implements Language {
                         "                                            cmcl version --complete=assets\n" +
                         "   --config=<配置名称> [<配置内容>]      为版本单独设置配置，使用“config --view”查看的内容中带有\n" +
                         "                                         “[游戏相关]”的即为可设置的配置。不输入<配置内容>则为使用全局配置。\n" +
-                        "   --fabric[=<Fabric 版本>]              为版本安装 Fabric，可以指明版本。加上--api为安装 Fabric API，也可以指定版本。\n" +
-                        "      [--api[=<Fabric API 版本>]]           cmcl version 1.19 --fabric --api=0.58.0\n" +
+                         "   --fabric[=<Fabric 版本>]              为版本安装 Fabric，可以指明版本。加上--api为安装 Fabric API，也可以指定版本。\n" +
+                         "      [--api[=<Fabric API 版本>]]        版本可用 latest 或 auto 自动选择最新版。\n" +
+                         "                                            cmcl version 1.19 --fabric=latest --api=latest\n" +
+                         "                                            cmcl version 1.19 --fabric --api=0.58.0\n" +
                         "   --forge[=<Forge 版本>]                为版本安装 Forge，可以指明版本。\n" +
                         "                                            cmcl version 1.19 --forge=42.0.0\n" +
                         "   --liteloader[=<LiteLoader 版本>]      为版本安装 LiteLoader，可以指明版本。\n" +

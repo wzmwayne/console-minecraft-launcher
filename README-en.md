@@ -7,9 +7,7 @@ A Minecraft Java Edition Launcher Running on the Command Line
 
 ### [中文README](README.md) | [Update Logs](update_logs-en.md) | [Troubleshooting](troubleshooting-en.md) | [Kotlin Version](https://github.com/MrShieh-X/cmcl-kotlin)
 
-## 🎬 Video Tutorial
-Chinese: [\[CMCL2.0\]命令行版MC启动器, 支持正版登录|外置登录|统一通行证|模组/整合包搜索安装|自定义皮肤披风](https://www.bilibili.com/video/BV1bY411R7wa/)<br/>
-If you still have any problems after watching the video or using it, you can refer to [Troubleshooting](troubleshooting-en.md) or ask the author through the author's contact information found in [About Author](#-about-author).
+> **Note**: This repository is a fork, some modifications are AI-assisted.
 
 ## 🏆 Special Thanks
 - [@0xpte4r6](https://github.com/0xpte4r6): Developed some functions
