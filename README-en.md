@@ -1,13 +1,20 @@
 # Console Minecraft Launcher
 A Minecraft Java Edition Launcher Running on the Command Line
 
-[![Latest Version](https://img.shields.io/badge/Release-v2.2.2-brightgreen)](https://github.com/MrShieh-X/console-minecraft-launcher/releases)
-![Release Date](https://img.shields.io/badge/Date-2024--07--24-brightgreen)
+[![Latest Version](https://img.shields.io/badge/Release-v2.2.2--ai-brightgreen)](https://github.com/wzmwayne/console-minecraft-launcher/releases)
 ![Software Requires](https://img.shields.io/badge/Software%20Requires-Java%208-blue)
 
-### [中文README](README.md) | [Update Logs](update_logs-en.md) | [Troubleshooting](troubleshooting-en.md) | [Kotlin Version](https://github.com/MrShieh-X/cmcl-kotlin)
+### [中文README](README.md) | [Update Logs](update_logs-en.md) | [Troubleshooting](troubleshooting-en.md)
 
-> **Note**: This repository is a fork, some modifications are AI-assisted.
+> **Note**: This repository is a fork of [MrShieh-X/console-minecraft-launcher](https://github.com/MrShieh-X/console-minecraft-launcher), some modifications are AI-assisted.
+>
+> ✨ **New Feature**: `--fabric=latest` / `--fabric=auto` and `--api=latest` / `--api=auto` to auto-select the latest version.
+>
+> 🌐 **Forced Simplified Chinese**: This fork always displays Simplified Chinese.
+
+## 🎬 Video Tutorial
+Chinese: [\[CMCL2.0\]命令行版MC启动器, 支持正版登录|外置登录|统一通行证|模组/整合包搜索安装|自定义皮肤披风](https://www.bilibili.com/video/BV1bY411R7wa/)<br/>
+If you still have any problems after watching the video or using it, you can refer to [Troubleshooting](troubleshooting-en.md) or ask the author through the author's contact information found in [About Author](#-about-author).
 
 ## 🏆 Special Thanks
 - [@0xpte4r6](https://github.com/0xpte4r6): Developed some functions
